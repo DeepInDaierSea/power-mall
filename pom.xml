@@ -33,6 +33,7 @@
         <druid.version>1.2.18</druid.version>
         <hutools.version>5.8.2</hutools.version>
         <swagger.version>3.0.0</swagger.version>
+        <lombok.version>1.18.32</lombok.version>
     </properties>
 
 
@@ -87,7 +88,7 @@
             <!--huTools-->
             <dependency>
                 <groupId>cn.hutool</groupId>
-                <artifactId>hutool-core</artifactId>
+                <artifactId>hutool-all</artifactId>
                 <version>${hutools.version}</version>
             </dependency>
             <!--            swagger-->
@@ -95,6 +96,12 @@
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-boot-starter</artifactId>
                 <version>${swagger.version}</version>
+            </dependency>
+            <!--lombok-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
