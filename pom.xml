@@ -34,6 +34,8 @@
         <hutools.version>5.8.2</hutools.version>
         <swagger.version>3.0.0</swagger.version>
         <lombok.version>1.18.32</lombok.version>
+        <common-base.version>1.0-SNAPSHOT</common-base.version>
+        <fastjson.version>1.2.80</fastjson.version>
     </properties>
 
 
@@ -102,6 +104,17 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <!--依赖实体类-->
+            <dependency>
+                <groupId>com.zkh</groupId>
+                <artifactId>common-base</artifactId>
+                <version>${common-base.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

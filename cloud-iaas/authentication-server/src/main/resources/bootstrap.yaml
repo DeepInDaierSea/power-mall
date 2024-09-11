@@ -1,0 +1,53 @@
+spring:
+  application:
+    name: authentication-server
+  main:
+    allow-circular-references: true
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      username: nacos
+      password: nacos
+      discovery:
+        enabled: true
+        service: ${spring.application.name}
+        namespace:  b131d3ee-23d9-485c-be96-a48af54796a7
+        group:  GATEWAY_GROUP
+      config:
+        namespace: b131d3ee-23d9-485c-be96-a48af54796a7
+        group:  GATEWAY_GROUP
+        prefix: authentication-server-dev.yaml
+        file-extension: yaml  #
+        shared-configs:
+          - application-dev.yaml
+  profiles:   #多环境配置
+    active: dev
+
+
+###############nacos config center this application##################
+#server:
+#  port: 6666
+
+###############nacos shared config##################
+#spring:
+#  datasource:
+#    druid:
+#      driver-class-name:  com.mysql.cj.jdbc.Driver
+#      url:  jdbc:mysql://localhost:3306/mall?useSSL=false&serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+#      username: root
+#      password: 123456
+#  mvc:
+#    format:
+#      date-time: yyyy-MM-dd HH:mm:ss
+#    pathmatch:
+#      matching-strategy: ant_path_matcher   #strategy 策略    指定路径配置策略
+#  jackson:  # springmvc中设置响应日期格式
+#    date-format: yyyy-MM-dd HH:mm:ss
+#    time-zone: GMT+8  # 设置时区
+#  redis:
+#    host: 192.168.197.168
+#    port: 6379
+#mybatis-plus:
+#  mapper-locations: classpath*:/mapper/**/*.xml
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

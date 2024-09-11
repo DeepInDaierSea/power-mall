@@ -17,6 +17,7 @@ spring:
         file-extension: yaml
   profiles:
     active: dev
+
 ######################nacos remote configuration########################
 #spring:
 #  cloud:
@@ -27,3 +28,9 @@ spring:
 #  redis:
 #    host: localhost
 #    port: 6379
+#gateway:
+#  white:
+#    url-allowed:
+#      - /doLogin       #url通过网关的白名单
+#      - /testTemp
+
