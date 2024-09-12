@@ -8,7 +8,6 @@ import com.zkh.constant.HttpResponseConstants;
 import com.zkh.impl.UserDetailServiceImpl;
 import com.zkh.model.LoginJsonResult;
 import com.zkh.model.Result;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -32,14 +31,15 @@ import java.util.UUID;
 
 @Configuration
 public class AuthenticationConfiguration extends WebSecurityConfigurerAdapter {
+
     @Resource
     private UserDetailServiceImpl userDetailServiceImpl;
-    @Resource
-    private AuthenticationSuccessHandler authenticationSuccessHandler;
-    @Resource
-    private LogoutSuccessHandler logoutSuccessHandler;
-    @Resource
-    private AuthenticationFailureHandler authenticationFailureHandler;
+//    @Resource
+//    private AuthenticationSuccessHandler authenticationSuccessHandler;
+//    @Resource
+//    private LogoutSuccessHandler logoutSuccessHandler;
+//    @Resource
+//    private AuthenticationFailureHandler authenticationFailureHandler;
     @Resource
     private StringRedisTemplate stringRedisTemplate;
 
@@ -61,13 +61,13 @@ public class AuthenticationConfiguration extends WebSecurityConfigurerAdapter {
         //配置登录
         http.formLogin()
                 .loginProcessingUrl(AuthenticationConstants.LOGIN_URL)
-                .successHandler(authenticationSuccessHandler)
-                .failureHandler(authenticationFailureHandler)
+                .successHandler(authenticationSuccessHandler())
+                .failureHandler(authenticationFailureHandler())
                 .permitAll();
         //配置等出
         http.logout()
                 .logoutSuccessUrl(AuthenticationConstants.LOGOUT_URL).
-                logoutSuccessHandler(logoutSuccessHandler)
+                logoutSuccessHandler(logoutSuccessHandler())
                 .permitAll();
         //要求所有请求都必须认证
         http.authorizeRequests().anyRequest().authenticated();
