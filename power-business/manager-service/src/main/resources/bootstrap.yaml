@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: manager-service
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      username: nacos
+      password: nacos
+      discovery:
+        namespace:  b131d3ee-23d9-485c-be96-a48af54796a7
+        group:  MANAGER_GROUP
+        service: ${spring.application.name}
+      config:
+        namespace:  b131d3ee-23d9-485c-be96-a48af54796a7
+        group:  MANAGER_GROUP
+        prefix: manager-service-dev.yaml
+        file-extension: yaml
+        shared-configs:
+          - application-dev.yaml
+  profiles:
+    active: dev
+###
+#server:
+#  port: 7777
+#swagger3:
+#  base-package: com.zkh.controller
+#  name: zkh
+#  url: https://www.zkh.com
+#  email: 1280546775@qq.com
+#  title: 后台管理系统-系统管理模块接口
+#  description: 实现后台管理系统的所有接口,根路径/manager-service
+#  license: zkh
+#  licenseUrl: https://www.zkh.com
+#  terms-of-service-url: https://www.zkh.com
+#  version: 1.0
+
