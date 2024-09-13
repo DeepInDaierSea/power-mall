@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
 import com.baomidou.mybatisplus.core.toolkit.ObjectUtils;
 import com.zkh.constant.AuthenticationConstants;
 import com.zkh.domain.LoginSysUser;
-import com.zkh.domain.SecurityUserDetails;
+import com.zkh.model.SecurityUserDetails;
 import com.zkh.mapper.LoginSysUserMapper;
 import com.zkh.strategy.LoginStrategy;
 import com.zkh.utils.SetSecurityUserDetailsUtil;

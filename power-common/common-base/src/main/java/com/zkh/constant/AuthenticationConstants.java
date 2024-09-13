@@ -39,8 +39,12 @@ public interface AuthenticationConstants {
      */
     String SYS_MEMBER_LOGIN = "sysMemberLogin";
     /**
-     * TOKEN 过期时间
+     * TOKEN 过期时间 4小时
      */
     long EXPIRE_TIME = 14400L;
+    /**
+     * TOKEN续约阈值 1小时
+     */
+    long TOKEN_EXPIRE_THRESHOLD_TIME = 60*60;
 
 }

@@ -1,4 +1,4 @@
-package com.zkh.domain;
+package com.zkh.model;
 
 
 import lombok.Data;

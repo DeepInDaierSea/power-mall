@@ -1,7 +1,7 @@
 package com.zkh.utils;
 
 import com.zkh.domain.LoginSysUser;
-import com.zkh.domain.SecurityUserDetails;
+import com.zkh.model.SecurityUserDetails;
 
 public class SetSecurityUserDetailsUtil {
     public static SecurityUserDetails setSecurityUserDetails(LoginSysUser loginSysUser){
